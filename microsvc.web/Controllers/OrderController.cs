@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Fop;
+using Fop.FopExpression;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using microsvc.services.Models;
 using microsvc.services.Services.Interfaces;
@@ -24,9 +26,11 @@ namespace microsvc.web.Controllers
 
         [HttpGet]
         [Route("ListOrders")]
-        public IEnumerable<OrderEntityExtended> ListOrders()
+        public IActionResult ListOrders([FromQuery] FopQuery request)
         {
-            return this.orderSvc.ListOrdersExtended();            
+            var fopRequest = FopExpressionBuilder<OrderEntityExtended>.Build(request.Filter, request.Order, request.PageNumber, request.PageSize);
+            var (filteredStudents, totalCount) = this.orderSvc.ListOrdersExtended(fopRequest);
+            return Ok(filteredStudents);
         }
     }
 }

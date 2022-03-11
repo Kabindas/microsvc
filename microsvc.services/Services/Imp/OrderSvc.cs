@@ -1,4 +1,5 @@
-﻿using microsvc.services.DbRepos.Order;
+﻿using Fop;
+using microsvc.services.DbRepos.Order;
 using microsvc.services.DbRepos.User;
 using microsvc.services.Models;
 using microsvc.services.Services.Interfaces;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace microsvc.services.Services.Imp
 {
@@ -24,26 +26,20 @@ namespace microsvc.services.Services.Imp
             return orderdb.OrderEntity;
         }
 
-        public IEnumerable<OrderEntityExtended> ListOrdersExtended()
+        public (IEnumerable<OrderEntityExtended>, int) ListOrdersExtended(IFopRequest request)
         {
-            var data = from o in ListOrders() join u in usersvc.ListUsers() on o.UserId equals u.Id
+            var data = (from o in ListOrders() join u in usersvc.ListUsers() on o.UserId equals u.Id
                        select new OrderEntityExtended
                        {
                            Id = o.Id,
                            UserId = o.UserId,
                            Name = u.Name,
                            TotalSpent = o.TotalSpent
-                       };
-            //var data = from o in orderdb.OrderEntity
-            //           join u in userdb.UserEntity on o.UserId equals u.Id
-            //           select new OrderEntityExtended
-            //           {
-            //               Id = o.Id,
-            //               UserId = o.UserId,
-            //               Name = u.Name,
-            //               TotalSpent = o.TotalSpent
-            //           };
-            return data;
+                       }).AsQueryable();
+            
+            var (filteredStudents, totalCount) = data.ApplyFop(request);
+            return (filteredStudents, totalCount);
         }
+
     }
 }
