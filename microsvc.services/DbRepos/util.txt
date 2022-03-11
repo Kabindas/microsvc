@@ -1,2 +1,6 @@
 ﻿Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Order;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbRepos\Order 
 Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=User;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbRepos\User 
+
+
+Scaffold-DbContext "DataSource=C:\sources\repos\microsvc\microsvc.services\SqLiteDBs\user.sqlite" Microsoft.EntityFrameworkCore.Sqlite -OutputDir DbRepos\User 
+Scaffold-DbContext "DataSource=C:\sources\repos\microsvc\microsvc.services\SqLiteDBs\order.sqlite" Microsoft.EntityFrameworkCore.Sqlite -OutputDir DbRepos\Order

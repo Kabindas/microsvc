@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace microsvc.services.DbRepos.User
 {
-    public partial class UserContext : DbContext
+    public partial class userContext : DbContext
     {
-        public UserContext()
+        public userContext()
         {
         }
 
-        public UserContext(DbContextOptions<UserContext> options)
+        public userContext(DbContextOptions<userContext> options)
             : base(options)
         {
         }
@@ -26,7 +26,7 @@ namespace microsvc.services.DbRepos.User
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=User;Trusted_Connection=True;");
+                optionsBuilder.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\user.sqlite");
             }
         }
 
@@ -34,9 +34,9 @@ namespace microsvc.services.DbRepos.User
         {
             modelBuilder.Entity<UserEntity>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Id)
+                    .HasColumnType("int")
+                    .ValueGeneratedNever();
             });
 
             OnModelCreatingPartial(modelBuilder);

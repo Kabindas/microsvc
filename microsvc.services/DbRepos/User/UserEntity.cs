@@ -9,7 +9,7 @@ namespace microsvc.services.DbRepos.User
 {
     public partial class UserEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
     }
 }

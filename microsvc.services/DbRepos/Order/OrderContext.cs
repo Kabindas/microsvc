@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace microsvc.services.DbRepos.Order
 {
-    public partial class OrderContext : DbContext
+    public partial class orderContext : DbContext
     {
-        public OrderContext()
+        public orderContext()
         {
         }
 
-        public OrderContext(DbContextOptions<OrderContext> options)
+        public orderContext(DbContextOptions<orderContext> options)
             : base(options)
         {
         }
@@ -26,7 +26,7 @@ namespace microsvc.services.DbRepos.Order
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Order;Trusted_Connection=True;");
+                optionsBuilder.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\order.sqlite");
             }
         }
 
@@ -34,9 +34,11 @@ namespace microsvc.services.DbRepos.Order
         {
             modelBuilder.Entity<OrderEntity>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id)
+                    .HasColumnType("int")
+                    .ValueGeneratedNever();
 
-                entity.Property(e => e.TotalSpent).HasColumnType("decimal(5, 2)");
+                entity.Property(e => e.UserId).HasColumnType("int");
             });
 
             OnModelCreatingPartial(modelBuilder);

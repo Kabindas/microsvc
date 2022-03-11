@@ -9,8 +9,8 @@ namespace microsvc.services.DbRepos.Order
 {
     public partial class OrderEntity
     {
-        public int Id { get; set; }
-        public decimal? TotalSpent { get; set; }
-        public int? UserId { get; set; }
+        public long Id { get; set; }
+        public double? TotalSpent { get; set; }
+        public long? UserId { get; set; }
     }
 }

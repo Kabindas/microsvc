@@ -31,8 +31,8 @@ namespace microsvc.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<OrderContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Order;Trusted_Connection=True;"));
-            services.AddDbContext<UserContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=User;Trusted_Connection=True;"));
+            services.AddDbContext<orderContext>(options => options.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\order.sqlite"));
+            services.AddDbContext<userContext>(options => options.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\user.sqlite"));
 
             services.AddSwaggerGen();
             services.AddTransient<IOrderSvc, OrderSvc>();

@@ -8,8 +8,8 @@ namespace microsvc.services.Services.Imp
 {
     public class UserSvc : IUserSvc
     {
-        private readonly UserContext userdb;
-        public UserSvc(UserContext userdb)
+        private readonly userContext userdb;
+        public UserSvc(userContext userdb)
         {
             this.userdb = userdb;
         }
