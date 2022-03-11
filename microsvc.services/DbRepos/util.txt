@@ -1,0 +1,2 @@
+﻿Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Order;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbRepos\Order 
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=User;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbRepos\User 
