@@ -111,6 +111,8 @@ All migrations have already run, and all the MSTests are expecting the data sedd
 
 There are two migrations, one for each database, to play with this there is a <b><i>util.txt</i></b> at microsvc.services/DbRepos with some commands to run on Package Manager Console.
 
+All the filtering, sorting and order of data is done with nuget <b>Fop</b> component. Please check all Fop operators available at https://github.com/arslanaybars/Fop 
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
