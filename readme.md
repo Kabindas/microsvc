@@ -109,7 +109,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    git clone https://github.com/Kabindas/microsvc.git
    ```
-   ```
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
