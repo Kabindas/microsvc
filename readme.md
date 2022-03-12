@@ -18,10 +18,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Kabindas/microsvc">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Microservices Sharing Domain Objects</h3>
 
   <p align="center">
