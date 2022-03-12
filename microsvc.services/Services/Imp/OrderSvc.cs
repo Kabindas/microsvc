@@ -38,8 +38,8 @@ namespace microsvc.services.Services.Imp
                             TotalSpent = o.TotalSpent
                         }).AsQueryable();
 
-            var (filteredStudents, totalCount) = data.ApplyFop(request);
-            return (filteredStudents, totalCount);
+            var (filteredOrders, totalCount) = data.ApplyFop(request);
+            return (filteredOrders, totalCount);
         }
 
     }

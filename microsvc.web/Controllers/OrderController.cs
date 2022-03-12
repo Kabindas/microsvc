@@ -29,8 +29,8 @@ namespace microsvc.web.Controllers
         public IActionResult ListOrders([FromQuery] FopQuery request)
         {
             var fopRequest = FopExpressionBuilder<OrderEntityExtended>.Build(request.Filter, request.Order, request.PageNumber, request.PageSize);
-            var (filteredStudents, totalCount) = this.orderSvc.ListOrdersExtended(fopRequest);
-            return Ok(filteredStudents);
+            var (filteredOrders, totalCount) = this.orderSvc.ListOrdersExtended(fopRequest);
+            return Ok(filteredOrders);
         }
     }
 }
