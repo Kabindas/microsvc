@@ -13,15 +13,15 @@ namespace microsvc.web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class OrderController : ControllerBase
+    public class UserOrderController : ControllerBase
     {
-        private readonly ILogger<OrderController> _logger;
-        private readonly IOrderSvc orderSvc;
+        private readonly ILogger<UserOrderController> _logger;
+        private readonly IUsersOrdersSvc userOrdersSvc;
 
-        public OrderController(ILogger<OrderController> logger, IOrderSvc orderSvc)
+        public UserOrderController(ILogger<UserOrderController> logger, IUsersOrdersSvc userOrdersSvc)
         {
             _logger = logger;
-            this.orderSvc = orderSvc;
+            this.userOrdersSvc = userOrdersSvc;
         }
 
         [HttpGet]
@@ -29,7 +29,7 @@ namespace microsvc.web.Controllers
         public IActionResult ListOrders([FromQuery] FopQuery request)
         {
             var fopRequest = FopExpressionBuilder<OrderEntityExtended>.Build(request.Filter, request.Order, request.PageNumber, request.PageSize);
-            var (filteredOrders, totalCount) = this.orderSvc.ListOrdersExtended(fopRequest);
+            var (filteredOrders, totalCount) = this.userOrdersSvc.ListOrdersExtended(fopRequest);
             return Ok(filteredOrders);
         }
     }

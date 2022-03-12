@@ -11,6 +11,5 @@ namespace microsvc.services.Services.Interfaces
     public interface IOrderSvc
     {
         IEnumerable<OrderEntity> ListOrders();
-        (IEnumerable<OrderEntityExtended>, int) ListOrdersExtended(IFopRequest request);
     }
 }

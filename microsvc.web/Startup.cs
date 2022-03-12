@@ -39,6 +39,7 @@ namespace microsvc.web
             services.AddSwaggerGen();
             services.AddTransient<IOrderSvc, OrderSvc>();
             services.AddTransient<IUserSvc, UserSvc>();
+            services.AddTransient<IUsersOrdersSvc, UsersOrdersSvc>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
