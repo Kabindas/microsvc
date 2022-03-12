@@ -1,10 +1,5 @@
-﻿using Fop;
-using microsvc.services.DbRepos.Order;
-using microsvc.services.Models;
-using System;
+﻿using microsvc.services.DbRepos.Order;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace microsvc.services.Services.Interfaces
 {

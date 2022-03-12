@@ -6,10 +6,8 @@ using microsvc.services.Models;
 using microsvc.services.Services.Interfaces;
 using Moq;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace microsvc.services.Services.Imp.Tests
 {
@@ -19,6 +17,8 @@ namespace microsvc.services.Services.Imp.Tests
         private Mock<IUserSvc> userMockSvc;
         private Mock<IOrderSvc> orderMockSvc;
         private IUsersOrdersSvc testMe;
+
+        //On a real teste environment this should point to test databases
         private userContext usersDb = new userContext();
         private orderContext orderDb = new orderContext();
 
@@ -58,7 +58,6 @@ namespace microsvc.services.Services.Imp.Tests
         [TestMethod()]
         public void ListOrdersPaged()
         {
-            userContext usersDb = new userContext();
             List<OrderEntityExtended> expected = new List<OrderEntityExtended>() {
                 new OrderEntityExtended { Id = 5, Name = "Paulo", TotalSpent = 584, UserId = 6 } ,
                 new OrderEntityExtended { Id = 6, Name="Jose", TotalSpent=221.5, UserId=4}
