@@ -31,9 +31,9 @@ namespace microsvc.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<orderContext>(options => options.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\order.sqlite",
+            services.AddDbContext<orderContext>(options => options.UseSqlite(Configuration.GetConnectionString("OrderConnection"),
                 builder => builder.MigrationsAssembly("microsvc.services")));
-            services.AddDbContext<userContext>(options => options.UseSqlite("DataSource=C:\\sources\\repos\\microsvc\\microsvc.services\\SqLiteDBs\\user.sqlite",
+            services.AddDbContext<userContext>(options => options.UseSqlite(Configuration.GetConnectionString("UserConnection"),
                 builder => builder.MigrationsAssembly("microsvc.services")));
 
             services.AddSwaggerGen();
