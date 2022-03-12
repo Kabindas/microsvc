@@ -65,7 +65,7 @@ namespace microsvc.services.Services.Imp.Tests
         }
 
         [TestMethod()]
-        public void ListOrdersPagedOrder()
+        public void ListOrdersPagedOrderByName()
         {
             userContext usersDb = new userContext();
             List<OrderEntityExtended> expected = new List<OrderEntityExtended>() {
