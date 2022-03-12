@@ -4,3 +4,14 @@ Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=User;Trusted_Connecti
 
 Scaffold-DbContext "DataSource=C:\sources\repos\microsvc\microsvc.services\SqLiteDBs\user.sqlite" Microsoft.EntityFrameworkCore.Sqlite -OutputDir DbRepos\User 
 Scaffold-DbContext "DataSource=C:\sources\repos\microsvc\microsvc.services\SqLiteDBs\order.sqlite" Microsoft.EntityFrameworkCore.Sqlite -OutputDir DbRepos\Order
+
+Add-Migration InitialCreate -c UserContext -o Migrations\userdb
+Add-Migration seed-data -c UserContext -o Migrations\userdb
+
+Add-Migration InitialCreate -c OrderContext -o Migrations\orderdb
+Add-Migration seed-data -c OrderContext -o Migrations\orderdb
+
+
+
+Update-Database -c UserContext
+Update-Database -c OrderContext
