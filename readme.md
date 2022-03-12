@@ -125,6 +125,8 @@ When running the app the https://localhost:5001/swagger/ will provide access
 
 All migrations have already run, and all the MSTests are expecting the data sedded
 
+There are two migrations, one for each database, to play with this there is a <b><i>util.txt</i></b> at microsvc.services/DbRepos with some commands to run on Package Manager Console.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -172,7 +174,7 @@ Project Link: [https://github.com/Kabindas/microsvc](https://github.com/Kabindas
 [issues-shield]: https://img.shields.io/github/issues/Kabindas/microsvc.svg?style=for-the-badge
 [issues-url]: https://github.com/Kabindas/microsvc/issues
 [license-shield]: https://img.shields.io/github/license/Kabindas/microsvc.svg?style=for-the-badge
-[license-url]: https://github.com/Kabindas/microsvc/blob/master/LICENSE.txt
+[license-url]: https://github.com/Kabindas/microsvc/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
