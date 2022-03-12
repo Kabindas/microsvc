@@ -62,8 +62,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 In a traditional microservices architecture, each entity has its own database. In the event that you need to show data that belong to two different entities, you will need to create an architecture that allows you to do so. This is just one way to do it 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
